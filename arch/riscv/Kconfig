@@ -217,7 +217,7 @@ config RISCV
 
 config RUSTC_SUPPORTS_RISCV
 	def_bool y
-	depends on 64BIT
+	depends on 64BIT || 32BIT
 	# Shadow call stack requires rustc version 1.82+ due to use of the
 	# -Zsanitizer=shadow-call-stack flag.
 	depends on !SHADOW_CALL_STACK || RUSTC_VERSION >= 108200

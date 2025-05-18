@@ -59,6 +59,12 @@ define_panicking_intrinsics!("`f64` should not be used", {
     __unorddf2,
 });
 
+#[cfg(target_arch = "riscv32")]
+define_panicking_intrinsics!("`u64` should not be used", {
+    __udivdi3,
+    __umoddi3,
+});
+
 define_panicking_intrinsics!("`i128` should not be used", {
     __ashrti3,
     __muloti4,
